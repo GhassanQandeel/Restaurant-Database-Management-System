@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css' ) }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Food</title>
+</head>
+<body>
+    <div class="navtabs">
+        <div class="navtab" data-target="menu"><a href="/">Home</a></div>
+        <div class="navtab" data-target="menu"><a href="/menu.html">menu</a></div>
+        <div class="navtab" data-target="Contact us"> <a href="Contact.html">Contact us </a></div>
+        <div class="underline"></div>
+    </div>
+    
+    <div class="cards">
+            <div class="card">
+                <img src="{{url_for('static' , filename = 'images/pw-473-5f815716ca9bd.jpg' ) }}" alt="Avatar" height="200">
+                <div class="container">
+                    <h4><b>Food</b></h4>
+
+                </div>
+            </div>
+    </div>
+
+     <form method="POST" >
+         <div class="form-group row">
+         {{form.name.label(class="col-sm-2 col-form-label col-form-label-sm") }}<br>
+            <div class="col-sm-10">
+            {{ form.name(class="form-control form-control-sm" )}}<br>
+            </div>
+         </div>
+
+
+         <div class="form-group row">
+         {{form.ID.label(class="col-sm-2 col-form-label col-form-label-sm") }}<br>
+            <div class="col-sm-10" >
+            {{ form.ID(class="form-control form-control-sm" )}}<br>
+            </div>
+         </div>
+
+        <div class="form-group row">
+         {{form.price.label(class="col-sm-2 col-form-label col-form-label-sm") }}<br>
+            <div class="col-sm-10">
+            {{ form.price(class="form-control form-control-sm" )}}<br>
+            </div>
+         </div>
+        <p>{{ form.submit(class="btn btn-outline-success" ) }}</p>
+    </form>
+
+
+    <!-- Footer -->
+    <footer class="padding_4x">
+        <div class="flex">
+            <section class="flex-content padding_1x">
+                <h3>Contact Us</h3>
+                <a href="#">+972595602421</a>
+                <a href="#">Ramallah - Palstine</a>
+                <a href="#">02-2903517</a>
+            </section>
+            <section class="flex-content padding_1x">
+               <h3>About Us</h3>
+                <a href="#">Welcome to Segafredo Restaurant, a culinary gem nestled in the heart of Ramallah. We take pride in being more than just a dining establishment; we are a destination where the rich flavors of Italy meet the vibrant culture of Palestine.</a>
+            </section>
+            <section class="flex-content padding_1x">
+                <a href="https://www.facebook.com/SegafredoDowntown"><i class="fa fa-facebook"></i></a>
+                <a href="https://x.com/segafredoitalia?lang=ar"><i class="fa fa-twitter"></i></a>
+            </section>
+        </div>
+    </footer>
+</body>
+</html>

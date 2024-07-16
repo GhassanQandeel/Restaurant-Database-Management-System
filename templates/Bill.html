@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bill</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static' , filename='css/main.css' ) }}">
+</head>
+
+<body>
+
+<div class="navtabs">
+    <div class="navtab active" data-target="Home"><a href="/">Home</a></div>
+    <div class="navtab" data-target="Menu"> <a href="menu.html"> Menu </a></div>
+    <div class="navtab" data-target="Contact us"> <a href="Contact.html">Contact us </a></div>
+    <div class="underline"></div>
+</div>
+
+ <div class="cards">
+    <div class="card">
+        <div class="container">
+            <b> Your Order detalis is </b>
+            <a> Order Number :{{ order_id }}<br/></a>
+            <a>  ID : {{ meal_order[0][0] }}  Meal : {{ meal_order[0][1] }}  price : {{ meal_order[0][2] }} <br/></a>
+            <a>  ID : {{ drink_order[0][0] }}  Drink : {{ drink_order[0][1] }}  price : {{ drink_order[0][2] }} <br/></a>
+            <a>  ID : {{ dessert_order[0][0] }}  Dessert : {{ dessert_order[0][1] }}  price : {{ dessert_order[0][2] }} <br/></a>
+            <a>Total price : {{ total_price }}</a>
+            {% if away_or_table == 1 %}
+            <a> The order on table </a>
+            {% else %}
+            <a> The order is take away </a>
+            {% endif %}
+
+
+
+        </div>
+    </div>
+ </div>
+
+ <div class="container">
+
+     <a class="card-button" href="http://localhost:5000/menu.html">
+            Order Again !!!
+     </a>
+
+     <a class="card-button" href="http://localhost:5000/Thanks.html">
+            Done
+     </a>
+
+ </div>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<footer class="padding_4x">
+  <div class="flex">
+    <section class="flex-content padding_1x">
+      <h3>Contact Us</h3>
+      <a href="#">+972595602421</a>
+      <a href="#">Ramallah - Palstine</a>
+      <a href="#">02-2903517</a>
+    </section>
+    <section class="flex-content padding_1x">
+      <h3>About Us</h3>
+      <a href="#">Welcome to Segafredo Restaurant, a culinary gem nestled in the heart of Ramallah. We take pride in being more than just a dining establishment; we are a destination where the rich flavors of Italy meet the vibrant culture of Palestine.</a>
+
+    </section>
+
+    <section class="flex-content padding_1x">
+          <a href="https://www.facebook.com/SegafredoDowntown"><i class="fa fa-facebook"></i></a>
+          <a href="https://x.com/segafredoitalia?lang=ar"><i class="fa fa-twitter"></i></a>
+    </section>
+  </div>
+</footer>
+</body>
+</html>
